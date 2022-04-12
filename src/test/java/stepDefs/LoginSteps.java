@@ -9,6 +9,7 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
+
 public class LoginSteps {
 	
 	WebDriver driver = BaseClass.driver;
@@ -16,20 +17,22 @@ public class LoginSteps {
 	@Given("User is on the landing page") 
 	public void user_is_on_landing_page() throws InterruptedException {
 	    driver.get("https://www.saucedemo.com/");
-	    Thread.sleep(3000);
+	    Thread.sleep(5000);
 	}
 	
 	@When("User enters username {string} and password {string}") 
 	public void user_enters_username_and_password(String username, String password) throws InterruptedException {
+		Thread.sleep(5000);
 		WebElement Username=driver.findElement(By.id("user-name"));
     	WebElement Password=driver.findElement(By.id("password"));
     	Username.sendKeys(username);
     	Password.sendKeys(password);
 	}
 
-	@When("User clicks on Login button")
-	public void user_clicks_on_Login_button() {
+	@When("User clicks on Login button") 
+	public void user_clicks_on_Login_button() throws InterruptedException {
 		WebElement LoginBtn=driver.findElement(By.id("login-button"));
+		Thread.sleep(5000);
     	LoginBtn.click();
 	}
 

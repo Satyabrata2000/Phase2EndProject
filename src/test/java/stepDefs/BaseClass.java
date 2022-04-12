@@ -18,6 +18,7 @@ public class BaseClass {
 		System.setProperty("webdriver.chrome.driver", "chromedriver.exe");
 		
 		driver = new ChromeDriver();
+		driver.get("https://www.saucedemo.com/");
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(5000, TimeUnit.MILLISECONDS);
 		
